@@ -181,7 +181,7 @@ impl Arena {
         }
     }
 
-    pub fn display(&self, sexpr: SExpr) -> DisplayExpr {
+    pub fn display(&'_ self, sexpr: SExpr) -> DisplayExpr<'_> {
         DisplayExpr { arena: self, sexpr }
     }
 

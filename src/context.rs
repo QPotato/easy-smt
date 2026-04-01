@@ -654,7 +654,7 @@ impl Context {
     /// You may only pass in `SExpr`s that were created by this
     /// `Context`. Failure to do so is safe, but may trigger a panic or return
     /// invalid data.
-    pub fn display(&self, expr: SExpr) -> DisplayExpr {
+    pub fn display(&'_ self, expr: SExpr) -> DisplayExpr<'_> {
         self.arena.display(expr)
     }
 
@@ -665,7 +665,7 @@ impl Context {
     /// You may only pass in `SExpr`s that were created by this
     /// `Context`. Failure to do so is safe, but may trigger a panic or return
     /// invalid data.
-    pub fn get(&self, expr: SExpr) -> SExprData {
+    pub fn get(&'_ self, expr: SExpr) -> SExprData<'_> {
         self.arena.get(expr)
     }
 
