@@ -21,6 +21,7 @@ impl Solver {
             .args(args)
             .stdin(process::Stdio::piped())
             .stdout(process::Stdio::piped())
+            .stderr(process::Stdio::null())
             .spawn()?;
         let stdin = handle.stdin.take().unwrap();
         let stdout = handle.stdout.take().unwrap();
